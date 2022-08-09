@@ -1,0 +1,28 @@
+function Output(NameOutput,X,Y,U,V,Fc,SN,Info)
+% function that write the plt files
+
+% INPUT:
+% - X,Y --> grid point
+% - U,V --> velocity fields
+% - Fc --> correlation factor
+% - SN --> signal/noise ratio (measured on second correlation peak)
+% - Info --> flag matrix of correct vectors
+
+% OUTPUT
+% plt file
+
+%% STARTING
+
+NomeFileOut=NameOutput;
+Mat(:,:,1)=Y;
+Mat(:,:,2)=X;
+Mat(:,:,3)=U;
+Mat(:,:,4)=V;
+Mat(:,:,5)=Fc;
+Mat(:,:,6)=SN;
+Mat(:,:,7)=Info;
+
+TitoloZona=sprintf('%s\n',NameOutput);TitoloZona(find(TitoloZona==10))=0;
+Titolo=sprintf('b16\n');Titolo(find(Titolo==10))=0;
+NomeVar=sprintf('X\nY\nU\nV\nFc\nSN\nInfo\n');NomeVar(find(NomeVar==10))=0;
+WritePlt(NomeFileOut,Mat,Titolo,NomeVar,TitoloZona);

@@ -1,0 +1,12 @@
+To import the dataset of the paper from Zenodo repository (link) the steps are the following:
+
+1) Open the file PrepWorkspace.m, choose the name of the folder and files (it's important to be coherent with the configuration file of the algorithm) and Run.
+2) At this point the folders are generated: Input->'InputName'-> PTV_Snapshots, drag and drop the entire folder PTV_Snapshots from Zenodo and overwrite the empty folder.
+3) Open the matlab file in the folder, it is a function to convert .h5 file to .mat, click Run and wait the ending of conversion. The function will ask you to delete the .h5 files, if you want to save space click 1.
+4) Now you have all the PTV snapshots in .mat + a folder with the grid.
+5) To use automatically these data in the codes, in ConfigurationKNN_PTV.m (settings folder) put as input name the one of these snapshots.
+
+At this point you have all the necessary to perform the algorithm, if you prefer, with a similar procedure, you can import also binned matrices ( that the function will convert in the format that the code requires if you want)
+or the training set.
+
+The same suggestions are valid also if you want to import other datasets.
